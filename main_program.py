@@ -2,8 +2,8 @@ import json
 import os
 
 
-def read(path):
-    """This function for opens json file"""
+def read_json(path):
+    """This function opens and reads .json file"""
     with open(path, 'r', encoding='utf-8') as file:
         json_file = json.load(file)
     return json_file
@@ -66,7 +66,7 @@ def input_path():
     path = input('Enter the path to the json file you want to open: ')
     if not os.path.isfile(path):
         print('No such file.')
-    json_navigation(read(path))
+    json_navigation(read_json(path))
 
 
 input_path()
